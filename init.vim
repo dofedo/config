@@ -82,6 +82,7 @@ imap <S-Up> <Esc>v<Up>
 imap <S-Down> <Esc>v<Down>
 imap <S-Left> <Esc>v<Left>
 imap <S-Right> <Esc>v<Right>
+inoremap <C-Del> <C-o>de
 
 " copy, cut, paste
 vmap <C-c> y<Esc>i
@@ -89,11 +90,21 @@ vmap <C-x> d<Esc>i
 map <C-v> pi
 imap <C-v> <Esc>pi
 imap <C-z> <Esc>ui
+imap <C-d> <C-[>diwi
+imap <C-Del> X<Esc>bce
 
-" for installing plugs in nvim
+" tabs command and switches
+nnoremap <C-Left> :tabprevious<CR>                                                                            
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-j> :tabprevious<CR>                                                                            
+nnoremap <C-k> :tabnext<CR>
 
+
+
+" NOTEs
+" installing plugs in nvim: vim-plug
+" needed node, npm, yarn so yarn build
 " :$ "move to end of line
-
 " :%s/search/replace/gci
 " :dd || 5dd
 " m + a // d
