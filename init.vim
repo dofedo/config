@@ -7,6 +7,8 @@
 :set softtabstop=4
 :set mouse=a
 :set whichwrap+=<,>,h,l,[,]
+:set autoread
+:set modifiable
 
 call plug#begin()
 
@@ -23,6 +25,7 @@ Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'https://github.com/fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'https://github.com/othree/html5.vim'
 
 
 set encoding=UTF-8
@@ -69,6 +72,10 @@ let g:airline_symbols.linenr = ''
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
+" Reload NERDTree
+nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
+
+
 " my config
 nmap <S-Up> v<Up>
 nmap <S-Down> v<Down>
@@ -92,6 +99,11 @@ imap <C-v> <Esc>pi
 imap <C-z> <Esc>ui
 imap <C-d> <C-[>diwi
 imap <C-Del> X<Esc>bce
+
+" save using ctrl-s
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
 
 " tabs command and switches
 nnoremap <C-Left> :tabprevious<CR>                                                                            
