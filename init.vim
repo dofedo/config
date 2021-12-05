@@ -26,6 +26,7 @@ Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'https://github.com/fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'https://github.com/othree/html5.vim'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 
 set encoding=UTF-8
@@ -120,7 +121,7 @@ nnoremap <C-k> :tabnext<CR>
 " :%s/search/replace/gci
 " :dd || 5dd
 " m + a // d
-
+" Alternatively, put your cursor on the <script> tag and use 4>> to indent four lines.
 
 
 
