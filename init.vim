@@ -1,5 +1,4 @@
 :set number
-" :set relativenumber
 :set autoindent
 :set tabstop=4
 :set shiftwidth=4
@@ -10,27 +9,25 @@
 :set autoread
 :set modifiable
 
+
 call plug#begin()
-
-Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
-Plug 'https://github.com/preservim/nerdtree' " NerdTree
-Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
-Plug 'https://github.com/vim-airline/vim-airline' " Status bar
-Plug 'https://github.com/lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType pgsql.vim
-Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
-Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
-Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
-Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
-Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
-Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
-Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
-Plug 'https://github.com/fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'https://github.com/othree/html5.vim'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-
-
-set encoding=UTF-8
-
+	Plug 'https://github.com/alvan/vim-closetag'
+	Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
+	Plug 'https://github.com/preservim/nerdtree' " NerdTree
+	Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
+	Plug 'https://github.com/vim-airline/vim-airline' " Status bar
+	Plug 'https://github.com/lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType pgsql.vim
+	Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
+	Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
+	Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
+	Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
+	Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
+	Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
+	Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
+	" Plug 'https://github.com/fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+	Plug 'https://github.com/othree/html5.vim'
+	" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+	set encoding=UTF-8
 call plug#end()
 
 nnoremap <C-f> :NERDTreeFocus<CR>
@@ -45,7 +42,7 @@ nmap <F8> :TagbarToggle<CR>
 :colorscheme jellybeans
 
 let g:NERDTreeDirArrowExpandable="+"
-let g:NERDTreeDirArrowCollapsible="~"
+let g:NERDTreeDirArrowCollapsible="-"
 
 " --- Just Some Notes ---
 " :PlugClean :PlugInstall :UpdateRemotePlugins
@@ -92,14 +89,16 @@ imap <S-Left> <Esc>v<Left>
 imap <S-Right> <Esc>v<Right>
 inoremap <C-Del> <C-o>de
 
+
 " copy, cut, paste
 vmap <C-c> y<Esc>i
 vmap <C-x> d<Esc>i
 map <C-v> pi
 imap <C-v> <Esc>pi
 imap <C-z> <Esc>ui
-imap <C-d> <C-[>diwi
-imap <C-Del> X<Esc>bce
+
+imap <c-d> <C-[>diwi
+" "imap <C-d> <Esc>bce
 
 " save using ctrl-s
 noremap <silent> <C-S>          :update<CR>
@@ -112,7 +111,14 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-j> :tabprevious<CR>                                                                            
 nnoremap <C-k> :tabnext<CR>
 
-
+" open & close paired characters
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+" inoremap {<CR> {<CR>}<ESC>O
+" inoremap {;<CR> {<CR>};<ESC>O
 
 " NOTEs
 " installing plugs in nvim: vim-plug
@@ -121,7 +127,7 @@ nnoremap <C-k> :tabnext<CR>
 " :%s/search/replace/gci
 " :dd || 5dd
 " m + a // d
-" Alternatively, put your cursor on the <script> tag and use 4>> to indent four lines.
+" Alternatively, put your cursor on the <script> tag and use 4>> to indent four tabs.
 
 
 
